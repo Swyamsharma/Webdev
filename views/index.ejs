@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+<div class="blog-button">
+    <a href="/create" class="create-blog">CREATE YOUR BLOG</a>
+</div>
+<div class="blogs">
+    <% if (locals.blog_title && locals.blog_content) { %>
+        <% console.log(blog_title); %>
+        <% for (let i = 0; i < blog_title.length; i++) { %>
+            <div id='<%= "blog-" + i %>' class='blog'>
+                <div class= "title-blog-container">
+                    <h5 class="overflow title-blog">
+                        <a href="/blog" class="title-blog"><%= blog_title[i]%></a>
+                    </h5>
+                </div>
+                <div class= "blog-content-container">
+                    <p class="overflow blog-content">
+                        <%= blog_content[i]%>  
+                    </p>
+                </div>
+            </div>
+        <% }; %>
+    <% }; %>
+</div>
+</div>
+<%- include("partials/footer.ejs") %>

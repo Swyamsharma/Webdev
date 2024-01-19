@@ -1,0 +1,224 @@
+@font-face {
+    font-family: grotesque;
+    src: url('./Body Grotesque Large Trial ExtraBold.ttf');
+}
+:root{
+    --clr-light: white;
+}
+.div1{
+    width: 100%;
+    height: 92vh;
+}
+.divs{
+    width: 100%;
+    height: 85vh;
+    display: grid;
+    align-items: center;
+}
+body {
+    background-color: black;
+    user-select: text;
+}
+.nav-link{
+    color: white;
+    text-shadow: 0 0 0.1em white;
+}
+
+.navbar {
+    background-color: black;
+    opacity: 0.95;
+}
+.neon-container{
+    display: flex;
+    margin-top: 3vw;
+    width: 45vw;
+}
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 
+main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+} */
+
+#re,
+#ar {
+    font-size: 8vw;
+    color: #E3F26D;
+    line-height: 9vw;
+    text-shadow: 0 0 0.5vw #E3F26D;
+    -webkit-text-stroke: 0.3px white;
+    font-family: grotesque;
+    transition: 0.3s;
+}
+
+#d,
+#t {
+    font-size: 8vw;
+    line-height: 9vw;
+    color: black;
+    -webkit-text-stroke: 0.3px white;
+    font-family: grotesque;
+    transition: 0.3s;
+}
+
+.col-md-8 {
+    margin-left: 5vw;
+}
+
+.neon-container:hover {
+    #re,
+    #ar {
+        color: black;
+        text-shadow: none;
+    }
+
+    #d,
+    #t {
+        color: #E3F26D;
+        text-shadow: 0 0 0.5vw #E3F26D;
+    }
+}
+.blog-button{
+    display: flex;
+    justify-content: center;
+}
+.create-blog{
+    margin-top: 1.5em;
+    color: var(--clr-light);
+    font-size: 1.2em;
+    text-decoration: none;
+    border: var(--clr-light) 0.125em solid;
+    border-radius: 0.25em;
+    padding: 0.20em 0.60em;
+    box-shadow: inset 0 0 0.2em var(--clr-light), 0 0 0.5em var(--clr-light); 
+    text-shadow: 0 0 0.05em var(--clr-light);
+    transition: 0.3s;
+    position: relative;
+}
+.create-blog::before{
+    content: '';
+    position: absolute;
+    background: var(--clr-light);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform: perspective(2em) rotateX(40deg) 
+    scale(1, 0.35);
+    filter: blur(1.5em);
+    opacity: 0.5;
+    transition: 0.3s;
+}
+.create-blog:hover{
+    color: black;
+    text-shadow: none;
+    background: var(--clr-light);
+}
+.create-blog:hover::before{
+    opacity: 1;
+}
+.div2{
+    background-color: rgb(27, 18, 18);
+    grid-template-columns: 8fr 1fr 3fr;
+    justify-items: left;
+}
+.div2>.N{
+    background-color: wheat;
+    border-radius: 1.5em;
+    height: 8em;
+    width: 8em;
+}
+.div2>#p1{
+    margin-left: 10vw;
+}
+.div3{
+    background-color: rgb(40, 40, 43);
+    grid-template-columns: 3fr 1fr 8fr;
+    justify-items: right;
+}
+.div3>#p2{
+    margin-right: 10vw;
+}
+.div4{
+    background-color: rgb(52, 52, 52);
+}
+.hidden-l{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-20%);
+    transition: all 1s;
+}
+.hidden-r{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(20%);
+    transition: all 1s;
+}
+.hidden-r1{
+    transform: translateX(20vw);
+    animation: slide linear;
+    animation-timeline: view();
+    transition: all 1s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+@keyframes slide {
+    to {scale: 1; opacity: 1; rotate: -30deg;}
+}
+.blogs{
+    display: flex;
+    height: 30vh;
+    align-content:center;
+    justify-content: space-around;
+    margin-top: 20vh;
+}
+.blog{
+    height: 20vh;
+    width: 30vw;
+    padding: 2em;
+    background-color: rgb(55, 55, 55);
+    border-radius: 0.5rem;
+    border: 1px solid white;
+}
+.title-blog-container{
+    margin: 1em;
+    margin-top: 0;
+    margin-left: 0;
+    padding: 1px;
+    overflow: hidden;
+}
+.blog-content-container{
+    margin: 1em;   
+    margin-top: 0;
+    margin-left: 0;
+    padding: 1px;
+    overflow: hidden;
+}
+.title-blog{
+    text-decoration: none;
+    color: aliceblue;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* start showing ellipsis when 3rd line is reached */
+}
+.blog-content{
+    direction: ltr;
+    text-overflow: ellipsis;
+}
